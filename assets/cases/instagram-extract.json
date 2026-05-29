@@ -1,0 +1,57 @@
+[
+  {
+    "index": 1,
+    "shortcode": "DXxr6HCmgyr",
+    "count": 5,
+    "files": [
+      "assets/cases/case-01-01.jpg",
+      "assets/cases/case-01-02.jpg",
+      "assets/cases/case-01-03.jpg",
+      "assets/cases/case-01-04.jpg",
+      "assets/cases/case-01-05.jpg"
+    ]
+  },
+  {
+    "index": 2,
+    "shortcode": "DXas-JMAK3S",
+    "count": 6,
+    "files": [
+      "assets/cases/case-02-01.jpg",
+      "assets/cases/case-02-02.jpg",
+      "assets/cases/case-02-03.jpg",
+      "assets/cases/case-02-04.jpg",
+      "assets/cases/case-02-05.jpg",
+      "assets/cases/case-02-06.jpg"
+    ]
+  },
+  {
+    "index": 3,
+    "shortcode": "DXXhfUVEiCZ",
+    "count": 5,
+    "files": [
+      "assets/cases/case-03-01.jpg",
+      "assets/cases/case-03-02.jpg",
+      "assets/cases/case-03-03.jpg",
+      "assets/cases/case-03-04.jpg",
+      "assets/cases/case-03-05.jpg"
+    ]
+  },
+  {
+    "index": 4,
+    "shortcode": "DT4lMk7DkZz",
+    "count": 0,
+    "files": []
+  },
+  {
+    "index": 5,
+    "shortcode": "DTHoePQDjdo",
+    "count": 5,
+    "files": [
+      "assets/cases/case-05-01.jpg",
+      "assets/cases/case-05-02.jpg",
+      "assets/cases/case-05-03.jpg",
+      "assets/cases/case-05-04.jpg",
+      "assets/cases/case-05-05.jpg"
+    ]
+  }
+]

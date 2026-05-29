@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JYL Broadcast | EFP & Live Production</title>
+    <meta
+      name="description"
+      content="JYL Broadcast provides EFP camera crews, broadcast lens packages, multi-camera live production, equipment support, case studies, and live streaming delivery."
+    />
+    <link rel="stylesheet" href="styles.css?v=16" />
+  </head>
+  <body>
+    <canvas id="signal-field" aria-hidden="true"></canvas>
+    <div class="page-noise" aria-hidden="true"></div>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="JYL Broadcast home">
+        <span class="brand-mark"></span>
+        <span>JYL BROADCAST</span>
+      </a>
+      <div class="header-actions">
+        <nav class="nav-links">
+          <a href="#about" data-i18n="navAbout">ABOUT US</a>
+          <a href="#services" data-i18n="navServices">SERVICES</a>
+          <a href="#cases" data-i18n="navCases">CASES</a>
+          <a href="#contact" data-i18n="navContact">CONTACT</a>
+        </nav>
+        <button class="language-toggle" type="button" aria-label="Switch language" data-lang-toggle>中文</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero hero-about" id="about" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="kicker" data-i18n="heroKicker">ABOUT US / LIVE PRODUCTION COMPANY</p>
+          <h1 id="hero-title">
+            <span>JYL</span>
+            <span>BROADCAST</span>
+          </h1>
+          <p class="hero-text" data-i18n="heroText">
+            JYL Broadcast is an EFP multi-camera and live production team for live events. We support concerts,
+            conferences, music festivals, dance competitions, launches and outdoor productions from planning through
+            on-site delivery.
+          </p>
+          <p class="hero-statement" data-i18n="heroStatement">Stable production systems for a better remote viewing experience.</p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#services" data-i18n="heroPrimary">OUR SERVICES</a>
+            <a class="button button-ghost" href="#contact" data-i18n="heroSecondary">GET IN TOUCH</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band services-showcase" id="services" aria-labelledby="services-title">
+        <div class="section-head">
+          <p class="kicker" data-i18n="servicesKicker">SERVICES</p>
+          <h2 id="services-title" data-i18n="servicesTitle">What we provide.</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span>01</span>
+            <h3 data-i18n="serviceConcertTitle">Concerts</h3>
+            <p data-i18n="serviceConcertText">Multi-camera switching, stage wides, artist close-ups, musician details, IMAG and online live delivery.</p>
+            <strong data-i18n="serviceConcertMeta">Box lens / Stage camera / Program feed</strong>
+          </article>
+          <article class="service-card">
+            <span>02</span>
+            <h3 data-i18n="serviceConferenceTitle">Conferences</h3>
+            <p data-i18n="serviceConferenceText">Speaker coverage, host shots, slides, video sources and platform delivery for forums, summits and corporate events.</p>
+            <strong data-i18n="serviceConferenceMeta">Speaker close-up / Slides / Streaming</strong>
+          </article>
+          <article class="service-card">
+            <span>03</span>
+            <h3 data-i18n="serviceFestivalTitle">Music Festivals</h3>
+            <p data-i18n="serviceFestivalText">Long-duration outdoor coverage, stage switching, field audio, backup recording and multi-platform distribution.</p>
+            <strong data-i18n="serviceFestivalMeta">Outdoor workflow / Audio / Backup</strong>
+          </article>
+          <article class="service-card">
+            <span>04</span>
+            <h3 data-i18n="serviceDanceTitle">Dance Competitions</h3>
+            <p data-i18n="serviceDanceText">Full-stage coverage, judge table shots, performer close-ups and program recording for competition workflows.</p>
+            <strong data-i18n="serviceDanceMeta">Wide shot / Close-up / Recording</strong>
+          </article>
+          <article class="service-card">
+            <span>05</span>
+            <h3 data-i18n="serviceLaunchTitle">Launch Events</h3>
+            <p data-i18n="serviceLaunchText">Brand reveals, interviews, key moments, live packages and media-ready deliverables with a consistent visual language.</p>
+            <strong data-i18n="serviceLaunchMeta">Brand feed / Interview / Clip delivery</strong>
+          </article>
+          <article class="service-card">
+            <span>06</span>
+            <h3 data-i18n="serviceFieldTitle">Field Production</h3>
+            <p data-i18n="serviceFieldText">Long-lens tracking, commentary audio, crew communication and signal planning for complex venues.</p>
+            <strong data-i18n="serviceFieldMeta">Long lens / Field audio / Signal plan</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="band cases-band" id="cases" aria-labelledby="cases-title">
+        <div class="studio-copy">
+          <p class="kicker" data-i18n="casesKicker">CASE STUDIES</p>
+          <h2 id="cases-title" data-i18n="casesTitle">Case studies.</h2>
+          <p data-i18n="casesText">
+            Every event has different requirements for camera positions, lensing, audio and signal reliability. We build
+            a clear production plan for each venue, scale and delivery platform.
+          </p>
+        </div>
+        <div class="post-gallery-list" aria-label="Instagram photo posts">
+          <article class="post-gallery">
+            <header class="post-gallery-head">
+              <span>POST 01</span>
+              <a href="https://www.instagram.com/jyl.broadcast/p/DXxr6HCmgyr/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
+            </header>
+            <div class="post-photo-grid">
+              <figure><img src="assets/cases/case-01-01.jpg" alt="JYL Broadcast Instagram post 01 photo 01" /></figure>
+              <figure><img src="assets/cases/case-01-02.jpg" alt="JYL Broadcast Instagram post 01 photo 02" /></figure>
+              <figure><img src="assets/cases/case-01-03.jpg" alt="JYL Broadcast Instagram post 01 photo 03" /></figure>
+              <figure><img src="assets/cases/case-01-04.jpg" alt="JYL Broadcast Instagram post 01 photo 04" /></figure>
+              <figure><img src="assets/cases/case-01-05.jpg" alt="JYL Broadcast Instagram post 01 photo 05" /></figure>
+            </div>
+          </article>
+          <article class="post-gallery">
+            <header class="post-gallery-head">
+              <span>POST 02</span>
+              <a href="https://www.instagram.com/jyl.broadcast/p/DXas-JMAK3S/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
+            </header>
+            <div class="post-photo-grid">
+              <figure><img src="assets/cases/case-02-01.jpg" alt="JYL Broadcast Instagram post 02 photo 01" /></figure>
+              <figure><img src="assets/cases/case-02-02.jpg" alt="JYL Broadcast Instagram post 02 photo 02" /></figure>
+              <figure><img src="assets/cases/case-02-03.jpg" alt="JYL Broadcast Instagram post 02 photo 03" /></figure>
+              <figure><img src="assets/cases/case-02-04.jpg" alt="JYL Broadcast Instagram post 02 photo 04" /></figure>
+              <figure><img src="assets/cases/case-02-05.jpg" alt="JYL Broadcast Instagram post 02 photo 05" /></figure>
+              <figure><img src="assets/cases/case-02-06.jpg" alt="JYL Broadcast Instagram post 02 photo 06" /></figure>
+            </div>
+          </article>
+          <article class="post-gallery">
+            <header class="post-gallery-head">
+              <span>POST 03</span>
+              <a href="https://www.instagram.com/jyl.broadcast/p/DXXhfUVEiCZ/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
+            </header>
+            <div class="post-photo-grid">
+              <figure><img src="assets/cases/case-03-01.jpg" alt="JYL Broadcast Instagram post 03 photo 01" /></figure>
+              <figure><img src="assets/cases/case-03-02.jpg" alt="JYL Broadcast Instagram post 03 photo 02" /></figure>
+              <figure><img src="assets/cases/case-03-03.jpg" alt="JYL Broadcast Instagram post 03 photo 03" /></figure>
+              <figure><img src="assets/cases/case-03-04.jpg" alt="JYL Broadcast Instagram post 03 photo 04" /></figure>
+              <figure><img src="assets/cases/case-03-05.jpg" alt="JYL Broadcast Instagram post 03 photo 05" /></figure>
+            </div>
+          </article>
+          <article class="post-gallery">
+            <header class="post-gallery-head">
+              <span>POST 04</span>
+              <a href="https://www.instagram.com/jyl.broadcast/p/DT4lMk7DkZz/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
+            </header>
+            <div class="post-photo-grid">
+              <figure><img src="assets/cases/case-04-01.jpg" alt="JYL Broadcast Instagram post 04 photo 01" /></figure>
+            </div>
+          </article>
+          <article class="post-gallery">
+            <header class="post-gallery-head">
+              <span>POST 05</span>
+              <a href="https://www.instagram.com/jyl.broadcast/p/DTHoePQDjdo/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
+            </header>
+            <div class="post-photo-grid">
+              <figure><img src="assets/cases/case-05-01.jpg" alt="JYL Broadcast Instagram post 05 photo 01" /></figure>
+              <figure><img src="assets/cases/case-05-02.jpg" alt="JYL Broadcast Instagram post 05 photo 02" /></figure>
+              <figure><img src="assets/cases/case-05-03.jpg" alt="JYL Broadcast Instagram post 05 photo 03" /></figure>
+              <figure><img src="assets/cases/case-05-04.jpg" alt="JYL Broadcast Instagram post 05 photo 04" /></figure>
+              <figure><img src="assets/cases/case-05-05.jpg" alt="JYL Broadcast Instagram post 05 photo 05" /></figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="band contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="kicker" data-i18n="contactKicker">CONTACT</p>
+          <h2 id="contact-title" data-i18n="contactTitle">Contact us.</h2>
+          <p data-i18n="contactText">
+            Tell us your event type, date, city, venue, duration and delivery platform. We will reply with camera, crew,
+            equipment and budget suggestions.
+          </p>
+          <a class="contact-link" href="mailto:hello@jylbroadcast.com">hello@jylbroadcast.com</a>
+        </div>
+        <form class="contact-form" name="contact" method="post" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden-field">
+            <label>
+              Do not fill this field
+              <input name="bot-field" />
+            </label>
+          </p>
+          <label>
+            <span data-i18n="formName">Name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            <span data-i18n="formEmail">Email</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label>
+            <span data-i18n="formPhone">Phone / WhatsApp</span>
+            <input type="tel" name="phone" autocomplete="tel" />
+          </label>
+          <label>
+            <span data-i18n="formEvent">Event Type</span>
+            <select name="event_type" required>
+              <option value="Concert" data-i18n="optionConcert">Concert</option>
+              <option value="Conference" data-i18n="optionConference">Conference</option>
+              <option value="Music Festival" data-i18n="optionFestival">Music Festival</option>
+              <option value="Dance Competition" data-i18n="optionDance">Dance Competition</option>
+              <option value="Launch Event" data-i18n="optionLaunch">Launch Event</option>
+              <option value="Field Production" data-i18n="optionField">Field Production</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="formDateCity">Date & City</span>
+            <input type="text" name="date_city" required />
+          </label>
+          <label>
+            <span data-i18n="formVenue">Venue</span>
+            <input type="text" name="venue" />
+          </label>
+          <label class="full">
+            <span data-i18n="formMessage">Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="button button-primary" type="submit" data-i18n="formSubmit">SEND REQUEST</button>
+          <p class="form-note" data-i18n="formNote">We will review your event details and reply by email or phone.</p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js?v=16"></script>
+  </body>
+</html>
