@@ -4,9 +4,14 @@ Static website for JYL Broadcast, including the landing page, bilingual copy, in
 
 ## Publish
 
-This repository is prepared for GitHub Pages through `.github/workflows/pages.yml`.
+This repository is intended to publish through Netlify.
 
-After pushing to `main`, enable GitHub Pages in the repository settings with source set to **GitHub Actions**. The site will publish from the root of the repository.
+In Netlify, import this GitHub repository and use these settings:
+
+- Build command: leave blank
+- Publish directory: `.`
+
+Every push to `main` will trigger a new Netlify deploy.
 
 ## Contact Form
 
