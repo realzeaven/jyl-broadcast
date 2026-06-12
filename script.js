@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d", { alpha: true });
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const stillMode = new URLSearchParams(window.location.search).has("still");
 const DEFAULT_LANGUAGE = "en";
-const LANGUAGE_STORAGE_KEY = "jyl-language-v2";
+const LANGUAGE_STORAGE_KEY = "jyl-language-v4";
 const CASE_IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
 
 const translations = {
@@ -14,32 +14,50 @@ const translations = {
     navContact: "联系",
     heroKicker: "关于我们 / 现场转播制作公司",
     heroText:
-      "JYL Broadcast 是一个面向现场活动的 EFP 多机位转播与直播制作团队。我们为演唱会、会议、音乐节、舞蹈比赛、发布会和户外活动提供从前期规划到现场执行的完整制作服务。",
-    heroStatement: "用稳定的现场系统，呈现更好的远端观看体验。",
+      "JYL Broadcast 是位于温哥华的多机位现场制作团队，服务演唱会、公司宴会、发布会、会议、音乐节、比赛和舞台活动。",
+    heroLocation: "总部位于温哥华，服务北美现场活动制作。",
+    heroStatement: "以可靠的 Flypack 系统和现场团队，完成稳定、清晰、可交付的现场画面。",
     heroPrimary: "我们的服务",
     heroSecondary: "联系我们",
+    flypackKicker: "现场制作 FLYPACKS",
+    flypackFx6: "Sony FX6 Flypack",
+    flypackEfp: "松下 EFP Flypack",
+    flypackNote: "适用于演唱会、会议、IMAG 大屏和直播交付。",
     servicesKicker: "服务",
-    servicesTitle: "我们提供什么服务。",
-    serviceConcertTitle: "演唱会",
-    serviceConcertText: "多机位切换、舞台全景、歌手特写、乐手细节、现场大屏与线上直播同步输出。",
-    serviceConcertMeta: "箱式镜头 / 舞台机位 / 节目信号",
-    serviceConferenceTitle: "会议",
-    serviceConferenceText: "嘉宾席、主持人、PPT、视频源和线上平台信号整合，适合论坛、峰会和企业大会。",
-    serviceConferenceMeta: "嘉宾特写 / PPT接入 / 直播推流",
-    serviceFestivalTitle: "音乐节",
-    serviceFestivalText: "长时间户外拍摄、舞台切换、现场音频接入、备用录制和多平台分发。",
-    serviceFestivalMeta: "户外流程 / 音频接入 / 备份录制",
-    serviceDanceTitle: "舞蹈比赛",
-    serviceDanceText: "完整舞台动线、评委席、选手特写和成绩/流程信息，兼顾记录与传播。",
-    serviceDanceMeta: "全景 / 特写 / 全程录制",
-    serviceLaunchTitle: "发布会",
-    serviceLaunchText: "品牌发布、访谈、揭幕、互动环节和媒体素材输出，保证画面统一和流程清晰。",
-    serviceLaunchMeta: "品牌画面 / 访谈 / 素材交付",
-    serviceFieldTitle: "赛事与户外活动",
-    serviceFieldText: "远距离长焦跟拍、解说音频、现场无线沟通和复杂场地的信号规划。",
-    serviceFieldMeta: "长焦 / 现场音频 / 信号规划",
+    servicesTitle: "我们支持的活动场景",
+    serviceConcertTitle: "演唱会与现场演出",
+    serviceConcertText: "为演唱会和舞台演出提供多机位制作，兼顾舞台全景、艺人特写、观众反应和 IMAG 大屏输出。",
+    serviceConcertMeta: "多机位 / IMAG / 节目信号",
+    serviceConferenceTitle: "公司宴会与颁奖典礼",
+    serviceConferenceText: "适用于公司晚宴、年会、颁奖典礼和品牌活动，稳定呈现嘉宾发言、舞台流程、现场氛围和关键时刻。",
+    serviceConferenceMeta: "摄像团队 / 导播切换 / 录制交付",
+    serviceFestivalTitle: "发布会与会议",
+    serviceFestivalText: "支持品牌发布、论坛、峰会和会议直播，整合主持人、嘉宾、PPT、播放源和线上平台信号。",
+    serviceFestivalMeta: "PPT接入 / 播放源 / 直播推流",
+    serviceDanceTitle: "音乐节",
+    serviceDanceText: "面向长时间、多节目、多舞台或户外场景，完成舞台切换、现场音频接入、备份录制和稳定节目输出。",
+    serviceDanceMeta: "EFP Flypack / 现场音频 / 备份录制",
+    serviceLaunchTitle: "比赛与赛事",
+    serviceLaunchText: "适配舞蹈比赛、体育/专项赛事和评审流程，捕捉选手、评委、比分/信息、关键动作和现场氛围。",
+    serviceLaunchMeta: "长焦机位 / 图文包装 / 多平台直播",
+    serviceFieldTitle: "晚会与舞台活动",
+    serviceFieldText: "适合文艺晚会、文化演出和特殊活动，根据节目 cue 和舞台流程完成稳定、精致的现场画面。",
+    serviceFieldMeta: "导播流程 / 嘉宾特写 / 素材交付",
+    coreCapabilitiesKicker: "核心制作能力",
+    coreCapabilitiesList: "多机位现场制作 / 导播切换 / IMAG大屏 / 直播推流 / ISO录制 / Flypack系统",
+    systemsKicker: "设备与系统",
+    systemsTitle: "适配真实现场的制作系统",
+    systemFx6Title: "Sony FX6 Flypack",
+    systemFx6Text: "适合演唱会、会议、访谈、IMAG 和直播项目，在机动性和画质之间保持稳定平衡。",
+    systemFx6Meta: "适合：演唱会 / 会议 / 直播",
+    systemEfpTitle: "松下 EFP Flypack",
+    systemEfpText: "广播级 EFP 制作系统，适合舞台演出、长焦机位、多机位现场制作和大型场馆节目信号输出。",
+    systemEfpMeta: "适合：舞台演出 / 长焦 / 节目信号",
+    systemWorkflowTitle: "切换与交付流程",
+    systemWorkflowText: "把信号规划、导播流程、现场切换、监看、推流、录制和活动后素材交付整理成一条清晰制作链路。",
+    systemWorkflowMeta: "包含：IMAG / 直播 / ISO录制",
     casesKicker: "案例",
-    casesTitle: "案例介绍。",
+    casesTitle: "案例介绍",
     casesText:
       "不同活动对机位、镜头、音频和信号稳定性的要求完全不同。我们会根据现场规模和交付平台，为每个项目配置清晰的制作方案。",
     caseForumTitle: "大型会议",
@@ -51,25 +69,51 @@ const translations = {
     caseFieldTitle: "赛事户外",
     caseFieldText: "长焦跟拍、现场解说音频、备用录制和网络条件不稳定时的交付预案。",
     caseFieldMeta: "长焦 / 现场音频 / 备份信号",
+    caseDeyunsheTitle: "德云社三十周年世界巡演 温哥华",
+    caseDeyunsheText: "不同舞台、不同节奏，但现场能量必须稳定传递。我们为温哥华站搭建 Sony FX6 多机位系统，并完成现场制作流程。",
+    caseDeyunsheMeta: "服务：Sony FX6 套装 / 导播切换 / 摄像支持 / 多机位制作",
+    caseTypeLabel: "类型",
+    caseLocationLabel: "地点",
+    caseSystemLabel: "系统",
+    caseDeyunsheType: "巡演现场",
+    caseDeyunsheLocation: "温哥华",
+    caseDeyunsheSystem: "Sony FX6 Flypack",
     caseJeffTitle: "张信哲世界巡回演唱会 温哥华",
-    caseJeffText: "为 Jeff Chang “Our Story” World Tour 温哥华站提供现场导播切换、设备租赁和技术支持，确保演唱会画面稳定交付。",
-    caseJeffMeta: "导播切换 / 设备租赁 / 技术支持",
+    caseJeffText: "熟悉的旋律在现场重新发生。我们为 Jeff Chang “Our Story” World Tour 温哥华站提供实时画面制作与现场技术支持。",
+    caseJeffMeta: "服务：现场导播切换 / 设备租赁 / 技术支持",
+    caseJeffType: "巡演现场",
+    caseJeffLocation: "温哥华",
+    caseJeffSystem: "现场切换系统",
     caseX9Title: "X9 Cup 射击比赛直播",
-    caseX9Text: "从摄像团队、现场导播、图文包装到多平台直播，完成赛事现场的一体化制作流程。",
-    caseX9Meta: "摄像团队 / 图文包装 / 多平台直播",
+    caseX9Text: "从摄像到推流，赛事现场需要一条完整可靠的制作链路。我们为 X9 Cup 提供从现场采集到最终直播输出的一体化流程。",
+    caseX9Meta: "服务：摄像团队 / 现场导播 / 图文包装 / 多平台直播 / 技术支持",
+    caseX9Type: "比赛直播",
+    caseX9Location: "温哥华",
+    caseX9System: "多机位直播系统",
     caseLamTitle: "林峯世界巡回演唱会 温哥华",
-    caseLamText: "为 LF LIVE AROUND THE WORLD 温哥华站提供多机位 IMAG 支持、Sony FX6 系统和现场导播流程。",
-    caseLamMeta: "Sony FX6 / IMAG / 现场切换",
+    caseLamText: "为 LF LIVE AROUND THE WORLD 温哥华站提供多机位 IMAG 支持，让舞台细节和现场节奏稳定呈现在大屏与节目输出中。",
+    caseLamMeta: "服务：导演与摄像团队 / Sony FX6 多机位系统 / IMAG / 现场切换",
+    caseLamType: "演唱会 / IMAG",
+    caseLamLocation: "温哥华",
+    caseLamSystem: "Sony FX6 多机位",
     caseDeerTitle: "九色鹿舞台演出",
-    caseDeerText: "在 Queen Elizabeth Theatre 提供多机位记录、摄像团队和现场切换支持。",
-    caseDeerMeta: "多机位记录 / 摄像团队 / 现场切换",
+    caseDeerText: "一个 cue、一次切换、一个瞬间，都是现场制作的一部分。我们在 Queen Elizabeth Theatre 为演出提供完整现场支持。",
+    caseDeerMeta: "服务：多机位记录 / 摄像团队 / 现场切换支持",
+    caseDeerType: "舞台演出",
+    caseDeerLocation: "Queen Elizabeth Theatre",
+    caseDeerSystem: "多机位录制",
     caseRichieTitle: "任贤齐「齐迹」世界巡回演唱会",
-    caseRichieText: "为 Richie Jen 温哥华站提供多机位、IMAG 系统、现场切换和团队支持。",
-    caseRichieMeta: "多机位 / IMAG / 现场团队",
+    caseRichieText: "现场演出没有第二次机会。我们为 Richie Jen 温哥华站提供稳定、精准并具有画面感的演唱会现场制作系统。",
+    caseRichieMeta: "服务：多机位搭建 / IMAG 系统 / 现场切换 / 现场团队",
+    caseRichieType: "演唱会 / IMAG",
+    caseRichieLocation: "温哥华",
+    caseRichieSystem: "IMAG 转播系统",
     caseMoreTitle: "更多案例即将更新",
     caseMoreText: "第 6 个案例位已预留，可直接接入新的 Instagram 图集、活动信息和项目链接。",
     caseMoreMeta: "等待下一个项目",
     caseOpen: "查看 Instagram",
+    caseViewPhotos: "展开照片",
+    caseHidePhotos: "收起照片",
     caseFestivalTitle: "音乐节转播",
     caseFestivalText: "长时间舞台拍摄、现场音频接入、节目切换、备份录制和多平台同步交付。",
     caseFestivalMeta: "户外舞台 / 现场音频 / 多平台",
@@ -86,19 +130,26 @@ const translations = {
     caseStreamingText: "节目信号输出、备份录制、平台分发和信号监看，适合需要稳定线上传播的活动。",
     caseStreamingMeta: "节目信号 / 备份 / 监看",
     contactKicker: "联系",
-    contactTitle: "联系我们。",
+    contactTitle: "联系我们",
     contactText:
       "请告诉我们活动类型、日期、城市、场地、预计时长和直播平台。我们会根据现场需求为你回复机位、人员、设备和预算建议。",
+    contactEmailLabel: "邮箱",
+    contactPhoneLabel: "电话",
+    contactInstagramLabel: "Instagram",
+    contactWhatsappLabel: "WhatsApp",
+    contactWhatsappAction: "发送消息",
+    contactXhsLabel: "小红书",
+    contactXhsAction: "查看主页",
     formName: "姓名",
     formEmail: "邮箱",
     formPhone: "电话 / WhatsApp",
     formEvent: "活动类型",
-    optionConcert: "演唱会",
-    optionConference: "会议",
-    optionFestival: "音乐节",
-    optionDance: "舞蹈比赛",
-    optionLaunch: "发布会",
-    optionField: "赛事或户外活动",
+    optionConcert: "演唱会 / 现场演出",
+    optionConference: "公司宴会 / 颁奖典礼",
+    optionFestival: "发布会 / 会议",
+    optionDance: "音乐节",
+    optionLaunch: "比赛 / 赛事",
+    optionField: "晚会 / 舞台活动",
     formDateCity: "日期与城市",
     formVenue: "场地",
     formMessage: "需求说明",
@@ -112,32 +163,50 @@ const translations = {
     navContact: "CONTACT",
     heroKicker: "ABOUT US / LIVE PRODUCTION COMPANY",
     heroText:
-      "JYL Broadcast is an EFP multi-camera and live production team for live events. We support concerts, conferences, music festivals, dance competitions, launches and outdoor productions from planning through on-site delivery.",
-    heroStatement: "Stable production systems for a better remote viewing experience.",
+      "JYL Broadcast is a Vancouver-based multicamera live production team for concerts, corporate galas, launches, conferences, festivals, competitions and stage events.",
+    heroLocation: "Based in Vancouver. Supporting live events across North America.",
+    heroStatement: "Reliable flypack systems and on-site crew for stable, clear and deliverable live images.",
     heroPrimary: "OUR SERVICES",
     heroSecondary: "GET IN TOUCH",
+    flypackKicker: "PRODUCTION FLYPACKS",
+    flypackFx6: "Sony FX6 Flypack",
+    flypackEfp: "Panasonic EFP Flypack",
+    flypackNote: "Configured for concerts, conferences, IMAG and livestream delivery.",
     servicesKicker: "SERVICES",
-    servicesTitle: "What we provide.",
-    serviceConcertTitle: "Concerts",
-    serviceConcertText: "Multi-camera switching, stage wides, artist close-ups, musician details, IMAG and online live delivery.",
-    serviceConcertMeta: "Box lens / Stage camera / Program feed",
-    serviceConferenceTitle: "Conferences",
-    serviceConferenceText: "Speaker coverage, host shots, slides, video sources and platform delivery for forums, summits and corporate events.",
-    serviceConferenceMeta: "Speaker close-up / Slides / Streaming",
-    serviceFestivalTitle: "Music Festivals",
-    serviceFestivalText: "Long-duration outdoor coverage, stage switching, field audio, backup recording and multi-platform distribution.",
-    serviceFestivalMeta: "Outdoor workflow / Audio / Backup",
-    serviceDanceTitle: "Dance Competitions",
-    serviceDanceText: "Full-stage coverage, judge table shots, performer close-ups and program recording for competition workflows.",
-    serviceDanceMeta: "Wide shot / Close-up / Recording",
-    serviceLaunchTitle: "Launch Events",
-    serviceLaunchText: "Brand reveals, interviews, key moments, live packages and media-ready deliverables with a consistent visual language.",
-    serviceLaunchMeta: "Brand feed / Interview / Clip delivery",
-    serviceFieldTitle: "Field Production",
-    serviceFieldText: "Long-lens tracking, commentary audio, crew communication and signal planning for complex venues.",
-    serviceFieldMeta: "Long lens / Field audio / Signal plan",
+    servicesTitle: "Event coverage we support",
+    serviceConcertTitle: "Concerts & Live Shows",
+    serviceConcertText: "Multicamera coverage for concerts and live performances, keeping wide stage views, artist close-ups, audience moments and IMAG output in sync.",
+    serviceConcertMeta: "Multicam / IMAG / Program Feed",
+    serviceConferenceTitle: "Corporate Galas & Banquets",
+    serviceConferenceText: "Coverage for company dinners, awards, gala programs and branded moments with clean speaker shots, guest reactions, live switching and recording.",
+    serviceConferenceMeta: "Camera Crew / Live Switching / Recording",
+    serviceFestivalTitle: "Launches & Conferences",
+    serviceFestivalText: "Production support for product launches, forums, summits and meetings, integrating hosts, speakers, slides, playback and streaming platforms.",
+    serviceFestivalMeta: "Slide Input / Playback / Streaming",
+    serviceDanceTitle: "Music Festivals",
+    serviceDanceText: "Long-duration festival production with stage switching, field audio, backup recording and reliable program delivery across changing show schedules.",
+    serviceDanceMeta: "EFP Flypack / Field Audio / Backup Record",
+    serviceLaunchTitle: "Competitions & Tournaments",
+    serviceLaunchText: "Live coverage for dance, sports and specialty competitions, following judges, contestants, scores, key actions and audience atmosphere.",
+    serviceLaunchMeta: "Long Lens / Graphics / Multi-platform Stream",
+    serviceFieldTitle: "Evening Events & Stage Shows",
+    serviceFieldText: "Flexible production for evening shows, cultural performances and special events where timing, cues and a polished live image matter.",
+    serviceFieldMeta: "Director Workflow / Guest Close-ups / Final Delivery",
+    coreCapabilitiesKicker: "CORE PRODUCTION CAPABILITIES",
+    coreCapabilitiesList: "Multicam Production / Live Switching / IMAG / Live Streaming / ISO Recording / Flypack Systems",
+    systemsKicker: "EQUIPMENT & SYSTEMS",
+    systemsTitle: "Production systems ready for real venues",
+    systemFx6Title: "Sony FX6 Flypack",
+    systemFx6Text: "A flexible camera package for concerts, conferences, interviews, IMAG and livestream coverage where mobility and image quality both matter.",
+    systemFx6Meta: "Best for: Concerts / Conferences / Livestream",
+    systemEfpTitle: "Panasonic EFP Flypack",
+    systemEfpText: "A broadcast-style EFP system for stage shows, long-lens coverage, multi-camera production and stable program output in larger venues.",
+    systemEfpMeta: "Best for: Stage Shows / Long Lens / Program Feed",
+    systemWorkflowTitle: "Switching & Delivery",
+    systemWorkflowText: "Signal planning, director workflow, live switching, monitoring, streaming, recording and post-event material handoff in one production chain.",
+    systemWorkflowMeta: "Includes: IMAG / Streaming / ISO Recording",
     casesKicker: "CASE STUDIES",
-    casesTitle: "Case studies.",
+    casesTitle: "Case studies",
     casesText:
       "Every event has different requirements for camera positions, lensing, audio and signal reliability. We build a clear production plan for each venue, scale and delivery platform.",
     caseForumTitle: "Forum Live",
@@ -149,25 +218,51 @@ const translations = {
     caseFieldTitle: "Field Production",
     caseFieldText: "Long-lens tracking, commentary audio, backup recording and delivery planning for unstable field conditions.",
     caseFieldMeta: "Long Lens / Field Audio / Backup Signal",
+    caseDeyunsheTitle: "Deyunshe 30th Anniversary World Tour Vancouver",
+    caseDeyunsheText: "Different stage, different rhythm, same live energy. We built a Sony FX6 multicam package and production workflow for the Vancouver stop.",
+    caseDeyunsheMeta: "Services: Sony FX6 Package / Live Switching / Camera Support / Multicam Production",
+    caseTypeLabel: "Type",
+    caseLocationLabel: "Location",
+    caseSystemLabel: "System",
+    caseDeyunsheType: "Concert Tour",
+    caseDeyunsheLocation: "Vancouver",
+    caseDeyunsheSystem: "Sony FX6 Flypack",
     caseJeffTitle: "Jeff Chang World Tour Vancouver",
-    caseJeffText: "Live switching, equipment rental and technical support for Jeff Chang “Our Story” World Tour in Vancouver.",
-    caseJeffMeta: "Live Switching / Equipment Rental / Technical Support",
+    caseJeffText: "Familiar melodies came alive in real time. We supported Jeff Chang “Our Story” World Tour Vancouver with live image delivery and on-site technical support.",
+    caseJeffMeta: "Services: Live Switching / Equipment Rental / Technical Support",
+    caseJeffType: "Concert Tour",
+    caseJeffLocation: "Vancouver",
+    caseJeffSystem: "Live Switching Package",
     caseX9Title: "X9 Cup Shooting Competition Live",
-    caseX9Text: "An end-to-end competition workflow from camera crew and live switching to graphics and multi-platform streaming.",
-    caseX9Meta: "Camera Crew / Graphics / Streaming",
+    caseX9Text: "From camera to stream, the competition needed one reliable production flow. We supported the full on-site path from capture to final live delivery.",
+    caseX9Meta: "Services: Camera Crew / Live Switching / Graphics Packaging / Multi-platform Streaming / Technical Support",
+    caseX9Type: "Competition Live",
+    caseX9Location: "Vancouver",
+    caseX9System: "Multicam Streaming",
     caseLamTitle: "Lam Fung Live Around The World Vancouver",
-    caseLamText: "Multicam IMAG support with a Sony FX6-based camera system, director workflow and on-site switching.",
-    caseLamMeta: "Sony FX6 / IMAG / Live Switching",
+    caseLamText: "We provided multicam IMAG support for LF LIVE AROUND THE WORLD Vancouver, keeping stage detail and live rhythm clear across screen and program output.",
+    caseLamMeta: "Services: Director & Camera Crew / Sony FX6 Multicam System / IMAG / Live Switching",
+    caseLamType: "Concert / IMAG",
+    caseLamLocation: "Vancouver",
+    caseLamSystem: "Sony FX6 Multicam",
     caseDeerTitle: "The Legend of the Nine-Colored Deer",
-    caseDeerText: "On-site multicam recording, camera crew and live switching support at Queen Elizabeth Theatre.",
-    caseDeerMeta: "Multicam Record / Camera Crew / Switching",
+    caseDeerText: "A cue, a cut, a moment. We supported the stage production at Queen Elizabeth Theatre with a clean multicam record and live switching workflow.",
+    caseDeerMeta: "Services: Multicam Recording / Camera Crew / Live Switching Support",
+    caseDeerType: "Stage Performance",
+    caseDeerLocation: "Queen Elizabeth Theatre",
+    caseDeerSystem: "Multicam Recording",
     caseRichieTitle: "Richie Jen QI JI World Tour Vancouver",
-    caseRichieText: "Multicam setup, IMAG system, live switching and on-site crew support for a concert production with no second take.",
-    caseRichieMeta: "Multicam / IMAG / On-site Crew",
+    caseRichieText: "Live events move fast, and broadcast has no second take. We delivered a stable, precise and cinematic concert production system for the Vancouver stop.",
+    caseRichieMeta: "Services: Multicam Setup / IMAG System / Live Switching / On-site Crew",
+    caseRichieType: "Concert / IMAG",
+    caseRichieLocation: "Vancouver",
+    caseRichieSystem: "IMAG Broadcast System",
     caseMoreTitle: "Additional Case Ready",
     caseMoreText: "This sixth case slot is ready for your next Instagram project, image set and production details.",
     caseMoreMeta: "Ready for next project",
     caseOpen: "View on Instagram",
+    caseViewPhotos: "View photos",
+    caseHidePhotos: "Hide photos",
     caseFestivalTitle: "Festival Coverage",
     caseFestivalText: "Long-duration stage coverage with live audio feed, program switching, backup recording and multi-platform delivery.",
     caseFestivalMeta: "Outdoor Stage / Live Audio / Multi-platform",
@@ -184,19 +279,26 @@ const translations = {
     caseStreamingText: "Program output, recording backup, platform delivery and signal monitoring for events that need reliable online reach.",
     caseStreamingMeta: "Program Feed / Backup / Monitoring",
     contactKicker: "CONTACT",
-    contactTitle: "Contact us.",
+    contactTitle: "Contact us",
     contactText:
       "Tell us your event type, date, city, venue, duration and delivery platform. We will reply with camera, crew, equipment and budget suggestions.",
+    contactEmailLabel: "Email",
+    contactPhoneLabel: "Phone",
+    contactInstagramLabel: "Instagram",
+    contactWhatsappLabel: "WhatsApp",
+    contactWhatsappAction: "Message us",
+    contactXhsLabel: "Xiaohongshu",
+    contactXhsAction: "View profile",
     formName: "Name",
     formEmail: "Email",
     formPhone: "Phone / WhatsApp",
     formEvent: "Event Type",
-    optionConcert: "Concert",
-    optionConference: "Conference",
-    optionFestival: "Music Festival",
-    optionDance: "Dance Competition",
-    optionLaunch: "Launch Event",
-    optionField: "Field Production",
+    optionConcert: "Concert / Live Show",
+    optionConference: "Corporate Gala / Banquet",
+    optionFestival: "Launch / Conference",
+    optionDance: "Music Festival",
+    optionLaunch: "Competition / Tournament",
+    optionField: "Evening Event / Stage Show",
     formDateCity: "Date & City",
     formVenue: "Venue",
     formMessage: "Message",
@@ -223,6 +325,7 @@ let height = 0;
 let dpr = 1;
 let frame = 0;
 let lastPaint = 0;
+let activeLanguageCode = DEFAULT_LANGUAGE;
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
@@ -627,9 +730,42 @@ function saveLanguagePreference(language) {
   }
 }
 
+function refreshCaseToggleLabels() {
+  const dictionary = translations[activeLanguageCode] || translations[DEFAULT_LANGUAGE];
+  document.querySelectorAll("[data-case-card]").forEach((card) => {
+    const button = card.querySelector("[data-case-toggle]");
+    const label = card.querySelector("[data-case-toggle-label]");
+    if (!button || !label) return;
+
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    label.textContent = isOpen ? dictionary.caseHidePhotos : dictionary.caseViewPhotos;
+  });
+}
+
+function setupCaseAccordions() {
+  document.querySelectorAll("[data-case-card]").forEach((card) => {
+    const button = card.querySelector("[data-case-toggle]");
+    const panel = button ? document.getElementById(button.getAttribute("aria-controls")) : null;
+    if (!button || !panel) return;
+
+    function setOpen(isOpen) {
+      button.setAttribute("aria-expanded", String(isOpen));
+      card.classList.toggle("is-open", isOpen);
+      panel.hidden = !isOpen;
+      refreshCaseToggleLabels();
+    }
+
+    setOpen(false);
+    button.addEventListener("click", () => {
+      setOpen(button.getAttribute("aria-expanded") !== "true");
+    });
+  });
+}
+
 function setLanguage(language) {
   const activeLanguage = translations[language] ? language : DEFAULT_LANGUAGE;
   const dictionary = translations[activeLanguage];
+  activeLanguageCode = activeLanguage;
   document.documentElement.lang = activeLanguage === "zh" ? "zh-CN" : "en";
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
@@ -645,6 +781,7 @@ function setLanguage(language) {
   }
 
   saveLanguagePreference(activeLanguage);
+  refreshCaseToggleLabels();
 }
 
 const languageToggle = document.querySelector("[data-lang-toggle]");
@@ -655,6 +792,7 @@ if (languageToggle) {
   });
 }
 
+setupCaseAccordions();
 setLanguage(readLanguagePreference() || DEFAULT_LANGUAGE);
 hydrateCaseImages();
 

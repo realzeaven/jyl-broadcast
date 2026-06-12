@@ -8,7 +8,8 @@
       name="description"
       content="JYL Broadcast provides EFP camera crews, broadcast lens packages, multi-camera live production, equipment support, case studies, and live streaming delivery."
     />
-    <link rel="stylesheet" href="styles.css?v=16" />
+    <link rel="icon" type="image/png" href="assets/brand/jyl-logo-mark-transparent.png" />
+    <link rel="stylesheet" href="styles.css?v=25" />
   </head>
   <body>
     <canvas id="signal-field" aria-hidden="true"></canvas>
@@ -16,8 +17,8 @@
 
     <header class="site-header" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="JYL Broadcast home">
-        <span class="brand-mark"></span>
-        <span>JYL BROADCAST</span>
+        <img class="brand-logo" src="assets/brand/jyl-logo-mark-transparent.png" alt="" aria-hidden="true" />
+        <span>BROADCAST</span>
       </a>
       <div class="header-actions">
         <nav class="nav-links">
@@ -39,11 +40,10 @@
             <span>BROADCAST</span>
           </h1>
           <p class="hero-text" data-i18n="heroText">
-            JYL Broadcast is an EFP multi-camera and live production team for live events. We support concerts,
-            conferences, music festivals, dance competitions, launches and outdoor productions from planning through
-            on-site delivery.
+            JYL Broadcast is a Vancouver-based multicamera live production team for concerts, corporate galas,
+            launches, conferences, festivals, competitions and stage events.
           </p>
-          <p class="hero-statement" data-i18n="heroStatement">Stable production systems for a better remote viewing experience.</p>
+          <p class="hero-location" data-i18n="heroLocation">Based in Vancouver. Supporting live events across North America.</p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button button-primary" href="#services" data-i18n="heroPrimary">OUR SERVICES</a>
             <a class="button button-ghost" href="#contact" data-i18n="heroSecondary">GET IN TOUCH</a>
@@ -54,44 +54,75 @@
       <section class="band services-showcase" id="services" aria-labelledby="services-title">
         <div class="section-head">
           <p class="kicker" data-i18n="servicesKicker">SERVICES</p>
-          <h2 id="services-title" data-i18n="servicesTitle">What we provide.</h2>
+          <h2 id="services-title" data-i18n="servicesTitle">Event coverage we support</h2>
         </div>
         <div class="service-grid">
           <article class="service-card">
             <span>01</span>
-            <h3 data-i18n="serviceConcertTitle">Concerts</h3>
-            <p data-i18n="serviceConcertText">Multi-camera switching, stage wides, artist close-ups, musician details, IMAG and online live delivery.</p>
-            <strong data-i18n="serviceConcertMeta">Box lens / Stage camera / Program feed</strong>
+            <h3 data-i18n="serviceConcertTitle">Concerts & Live Shows</h3>
+            <p data-i18n="serviceConcertText">Multicamera coverage for concerts and live performances, keeping wide stage views, artist close-ups, audience moments and IMAG output in sync.</p>
+            <strong data-i18n="serviceConcertMeta">Multicam / IMAG / Program Feed</strong>
           </article>
           <article class="service-card">
             <span>02</span>
-            <h3 data-i18n="serviceConferenceTitle">Conferences</h3>
-            <p data-i18n="serviceConferenceText">Speaker coverage, host shots, slides, video sources and platform delivery for forums, summits and corporate events.</p>
-            <strong data-i18n="serviceConferenceMeta">Speaker close-up / Slides / Streaming</strong>
+            <h3 data-i18n="serviceConferenceTitle">Corporate Galas & Banquets</h3>
+            <p data-i18n="serviceConferenceText">Coverage for company dinners, awards, gala programs and branded moments with clean speaker shots, guest reactions, live switching and recording.</p>
+            <strong data-i18n="serviceConferenceMeta">Camera Crew / Live Switching / Recording</strong>
           </article>
           <article class="service-card">
             <span>03</span>
-            <h3 data-i18n="serviceFestivalTitle">Music Festivals</h3>
-            <p data-i18n="serviceFestivalText">Long-duration outdoor coverage, stage switching, field audio, backup recording and multi-platform distribution.</p>
-            <strong data-i18n="serviceFestivalMeta">Outdoor workflow / Audio / Backup</strong>
+            <h3 data-i18n="serviceFestivalTitle">Launches & Conferences</h3>
+            <p data-i18n="serviceFestivalText">Production support for product launches, forums, summits and meetings, integrating hosts, speakers, slides, playback and streaming platforms.</p>
+            <strong data-i18n="serviceFestivalMeta">Slide Input / Playback / Streaming</strong>
           </article>
           <article class="service-card">
             <span>04</span>
-            <h3 data-i18n="serviceDanceTitle">Dance Competitions</h3>
-            <p data-i18n="serviceDanceText">Full-stage coverage, judge table shots, performer close-ups and program recording for competition workflows.</p>
-            <strong data-i18n="serviceDanceMeta">Wide shot / Close-up / Recording</strong>
+            <h3 data-i18n="serviceDanceTitle">Music Festivals</h3>
+            <p data-i18n="serviceDanceText">Long-duration festival production with stage switching, field audio, backup recording and reliable program delivery across changing show schedules.</p>
+            <strong data-i18n="serviceDanceMeta">EFP Flypack / Field Audio / Backup Record</strong>
           </article>
           <article class="service-card">
             <span>05</span>
-            <h3 data-i18n="serviceLaunchTitle">Launch Events</h3>
-            <p data-i18n="serviceLaunchText">Brand reveals, interviews, key moments, live packages and media-ready deliverables with a consistent visual language.</p>
-            <strong data-i18n="serviceLaunchMeta">Brand feed / Interview / Clip delivery</strong>
+            <h3 data-i18n="serviceLaunchTitle">Competitions & Tournaments</h3>
+            <p data-i18n="serviceLaunchText">Live coverage for dance, sports and specialty competitions, following judges, contestants, scores, key actions and audience atmosphere.</p>
+            <strong data-i18n="serviceLaunchMeta">Long Lens / Graphics / Multi-platform Stream</strong>
           </article>
           <article class="service-card">
             <span>06</span>
-            <h3 data-i18n="serviceFieldTitle">Field Production</h3>
-            <p data-i18n="serviceFieldText">Long-lens tracking, commentary audio, crew communication and signal planning for complex venues.</p>
-            <strong data-i18n="serviceFieldMeta">Long lens / Field audio / Signal plan</strong>
+            <h3 data-i18n="serviceFieldTitle">Evening Events & Stage Shows</h3>
+            <p data-i18n="serviceFieldText">Flexible production for evening shows, cultural performances and special events where timing, cues and a polished live image matter.</p>
+            <strong data-i18n="serviceFieldMeta">Director Workflow / Guest Close-ups / Final Delivery</strong>
+          </article>
+        </div>
+        <div class="core-capabilities" aria-label="Core production capabilities">
+          <span data-i18n="coreCapabilitiesKicker">CORE PRODUCTION CAPABILITIES</span>
+          <strong data-i18n="coreCapabilitiesList">Multicam Production / Live Switching / IMAG / Live Streaming / ISO Recording / Flypack Systems</strong>
+        </div>
+      </section>
+
+      <section class="band systems-band" id="systems" aria-labelledby="systems-title">
+        <div class="section-head">
+          <p class="kicker" data-i18n="systemsKicker">EQUIPMENT & SYSTEMS</p>
+          <h2 id="systems-title" data-i18n="systemsTitle">Production systems ready for real venues</h2>
+        </div>
+        <div class="systems-grid">
+          <article class="system-card">
+            <span>01</span>
+            <h3 data-i18n="systemFx6Title">Sony FX6 Flypack</h3>
+            <p data-i18n="systemFx6Text">A flexible camera package for concerts, conferences, interviews, IMAG and livestream coverage where mobility and image quality both matter.</p>
+            <strong data-i18n="systemFx6Meta">Best for: Concerts / Conferences / Livestream</strong>
+          </article>
+          <article class="system-card">
+            <span>02</span>
+            <h3 data-i18n="systemEfpTitle">Panasonic EFP Flypack</h3>
+            <p data-i18n="systemEfpText">A broadcast-style EFP system for stage shows, long-lens coverage, multi-camera production and stable program output in larger venues.</p>
+            <strong data-i18n="systemEfpMeta">Best for: Stage Shows / Long Lens / Program Feed</strong>
+          </article>
+          <article class="system-card">
+            <span>03</span>
+            <h3 data-i18n="systemWorkflowTitle">Switching & Delivery</h3>
+            <p data-i18n="systemWorkflowText">Signal planning, director workflow, live switching, monitoring, streaming, recording and post-event material handoff in one production chain.</p>
+            <strong data-i18n="systemWorkflowMeta">Includes: IMAG / Streaming / ISO Recording</strong>
           </article>
         </div>
       </section>
@@ -99,73 +130,204 @@
       <section class="band cases-band" id="cases" aria-labelledby="cases-title">
         <div class="studio-copy">
           <p class="kicker" data-i18n="casesKicker">CASE STUDIES</p>
-          <h2 id="cases-title" data-i18n="casesTitle">Case studies.</h2>
+          <h2 id="cases-title" data-i18n="casesTitle">Case studies</h2>
           <p data-i18n="casesText">
             Every event has different requirements for camera positions, lensing, audio and signal reliability. We build
             a clear production plan for each venue, scale and delivery platform.
           </p>
         </div>
-        <div class="post-gallery-list" aria-label="Instagram photo posts">
-          <article class="post-gallery">
-            <header class="post-gallery-head">
-              <span>POST 01</span>
-              <a href="https://www.instagram.com/jyl.broadcast/p/DXxr6HCmgyr/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
-            </header>
-            <div class="post-photo-grid">
-              <figure><img src="assets/cases/case-01-01.jpg" alt="JYL Broadcast Instagram post 01 photo 01" /></figure>
-              <figure><img src="assets/cases/case-01-02.jpg" alt="JYL Broadcast Instagram post 01 photo 02" /></figure>
-              <figure><img src="assets/cases/case-01-03.jpg" alt="JYL Broadcast Instagram post 01 photo 03" /></figure>
-              <figure><img src="assets/cases/case-01-04.jpg" alt="JYL Broadcast Instagram post 01 photo 04" /></figure>
-              <figure><img src="assets/cases/case-01-05.jpg" alt="JYL Broadcast Instagram post 01 photo 05" /></figure>
+        <div class="post-gallery-list" aria-label="Case study photo posts">
+          <article class="post-gallery" data-case-card>
+            <button class="case-teaser" type="button" aria-expanded="false" aria-controls="case-gallery-06" data-case-toggle>
+              <figure class="case-cover">
+                <img src="assets/cases/case-06-01.jpg" alt="Deyunshe 30th Anniversary World Tour Vancouver live production" />
+              </figure>
+              <span class="case-copy">
+                <span class="case-index">01 / 6 PHOTOS</span>
+                <span class="case-title" data-i18n="caseDeyunsheTitle">Deyunshe 30th Anniversary World Tour Vancouver</span>
+                <span class="case-text" data-i18n="caseDeyunsheText">Sony FX6 camera package, live switching, camera support and multicam production for Deyunshe 30th Anniversary World Tour in Vancouver.</span>
+                <span class="case-meta" data-i18n="caseDeyunsheMeta">Sony FX6 / Live Switching / Multicam Production</span>
+                <span class="case-specs">
+                  <span><em data-i18n="caseTypeLabel">Type</em><strong data-i18n="caseDeyunsheType">Concert Tour</strong></span>
+                  <span><em data-i18n="caseLocationLabel">Location</em><strong data-i18n="caseDeyunsheLocation">Vancouver</strong></span>
+                  <span><em data-i18n="caseSystemLabel">System</em><strong data-i18n="caseDeyunsheSystem">Sony FX6 Flypack</strong></span>
+                </span>
+              </span>
+              <span class="case-action">
+                <span data-case-toggle-label data-i18n="caseViewPhotos">View photos</span>
+                <span class="case-plus" aria-hidden="true">+</span>
+              </span>
+            </button>
+            <div class="case-expanded" id="case-gallery-06" hidden>
+              <div class="post-photo-grid">
+                <figure><img src="assets/cases/case-06-01.jpg" alt="Deyunshe 30th Anniversary World Tour Vancouver photo 01" /></figure>
+                <figure><img src="assets/cases/case-06-02.jpg" alt="Deyunshe 30th Anniversary World Tour Vancouver photo 02" /></figure>
+                <figure><img src="assets/cases/case-06-03.jpg" alt="Deyunshe 30th Anniversary World Tour Vancouver photo 03" /></figure>
+                <figure><img src="assets/cases/case-06-04.jpg" alt="Deyunshe 30th Anniversary World Tour Vancouver photo 04" /></figure>
+                <figure><img src="assets/cases/case-06-05.jpg" alt="Deyunshe 30th Anniversary World Tour Vancouver photo 05" /></figure>
+                <figure><img src="assets/cases/case-06-06.jpg" alt="Deyunshe 30th Anniversary World Tour Vancouver photo 06" /></figure>
+              </div>
+              <a class="case-link" href="https://www.instagram.com/p/DYoNtmMFI28/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
             </div>
           </article>
-          <article class="post-gallery">
-            <header class="post-gallery-head">
-              <span>POST 02</span>
-              <a href="https://www.instagram.com/jyl.broadcast/p/DXas-JMAK3S/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
-            </header>
-            <div class="post-photo-grid">
-              <figure><img src="assets/cases/case-02-01.jpg" alt="JYL Broadcast Instagram post 02 photo 01" /></figure>
-              <figure><img src="assets/cases/case-02-02.jpg" alt="JYL Broadcast Instagram post 02 photo 02" /></figure>
-              <figure><img src="assets/cases/case-02-03.jpg" alt="JYL Broadcast Instagram post 02 photo 03" /></figure>
-              <figure><img src="assets/cases/case-02-04.jpg" alt="JYL Broadcast Instagram post 02 photo 04" /></figure>
-              <figure><img src="assets/cases/case-02-05.jpg" alt="JYL Broadcast Instagram post 02 photo 05" /></figure>
-              <figure><img src="assets/cases/case-02-06.jpg" alt="JYL Broadcast Instagram post 02 photo 06" /></figure>
+          <article class="post-gallery" data-case-card>
+            <button class="case-teaser" type="button" aria-expanded="false" aria-controls="case-gallery-01" data-case-toggle>
+              <figure class="case-cover">
+                <img src="assets/cases/case-01-01.jpg" alt="Jeff Chang World Tour Vancouver live production" />
+              </figure>
+              <span class="case-copy">
+                <span class="case-index">02 / 5 PHOTOS</span>
+                <span class="case-title" data-i18n="caseJeffTitle">Jeff Chang World Tour Vancouver</span>
+                <span class="case-text" data-i18n="caseJeffText">Live switching, equipment rental and technical support for Jeff Chang “Our Story” World Tour in Vancouver.</span>
+                <span class="case-meta" data-i18n="caseJeffMeta">Live Switching / Equipment Rental / Technical Support</span>
+                <span class="case-specs">
+                  <span><em data-i18n="caseTypeLabel">Type</em><strong data-i18n="caseJeffType">Concert Tour</strong></span>
+                  <span><em data-i18n="caseLocationLabel">Location</em><strong data-i18n="caseJeffLocation">Vancouver</strong></span>
+                  <span><em data-i18n="caseSystemLabel">System</em><strong data-i18n="caseJeffSystem">Live Switching Package</strong></span>
+                </span>
+              </span>
+              <span class="case-action">
+                <span data-case-toggle-label data-i18n="caseViewPhotos">View photos</span>
+                <span class="case-plus" aria-hidden="true">+</span>
+              </span>
+            </button>
+            <div class="case-expanded" id="case-gallery-01" hidden>
+              <div class="post-photo-grid">
+                <figure><img src="assets/cases/case-01-01.jpg" alt="Jeff Chang World Tour Vancouver photo 01" /></figure>
+                <figure><img src="assets/cases/case-01-02.jpg" alt="Jeff Chang World Tour Vancouver photo 02" /></figure>
+                <figure><img src="assets/cases/case-01-03.jpg" alt="Jeff Chang World Tour Vancouver photo 03" /></figure>
+                <figure><img src="assets/cases/case-01-04.jpg" alt="Jeff Chang World Tour Vancouver photo 04" /></figure>
+                <figure><img src="assets/cases/case-01-05.jpg" alt="Jeff Chang World Tour Vancouver photo 05" /></figure>
+              </div>
+              <a class="case-link" href="https://www.instagram.com/jyl.broadcast/p/DXxr6HCmgyr/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
             </div>
           </article>
-          <article class="post-gallery">
-            <header class="post-gallery-head">
-              <span>POST 03</span>
-              <a href="https://www.instagram.com/jyl.broadcast/p/DXXhfUVEiCZ/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
-            </header>
-            <div class="post-photo-grid">
-              <figure><img src="assets/cases/case-03-01.jpg" alt="JYL Broadcast Instagram post 03 photo 01" /></figure>
-              <figure><img src="assets/cases/case-03-02.jpg" alt="JYL Broadcast Instagram post 03 photo 02" /></figure>
-              <figure><img src="assets/cases/case-03-03.jpg" alt="JYL Broadcast Instagram post 03 photo 03" /></figure>
-              <figure><img src="assets/cases/case-03-04.jpg" alt="JYL Broadcast Instagram post 03 photo 04" /></figure>
-              <figure><img src="assets/cases/case-03-05.jpg" alt="JYL Broadcast Instagram post 03 photo 05" /></figure>
+          <article class="post-gallery" data-case-card>
+            <button class="case-teaser" type="button" aria-expanded="false" aria-controls="case-gallery-02" data-case-toggle>
+              <figure class="case-cover">
+                <img src="assets/cases/case-02-01.jpg" alt="X9 Cup Shooting Competition live broadcast" />
+              </figure>
+              <span class="case-copy">
+                <span class="case-index">03 / 6 PHOTOS</span>
+                <span class="case-title" data-i18n="caseX9Title">X9 Cup Shooting Competition Live</span>
+                <span class="case-text" data-i18n="caseX9Text">An end-to-end competition workflow from camera crew and live switching to graphics and multi-platform streaming.</span>
+                <span class="case-meta" data-i18n="caseX9Meta">Camera Crew / Graphics / Streaming</span>
+                <span class="case-specs">
+                  <span><em data-i18n="caseTypeLabel">Type</em><strong data-i18n="caseX9Type">Competition Live</strong></span>
+                  <span><em data-i18n="caseLocationLabel">Location</em><strong data-i18n="caseX9Location">Vancouver</strong></span>
+                  <span><em data-i18n="caseSystemLabel">System</em><strong data-i18n="caseX9System">Multicam Streaming</strong></span>
+                </span>
+              </span>
+              <span class="case-action">
+                <span data-case-toggle-label data-i18n="caseViewPhotos">View photos</span>
+                <span class="case-plus" aria-hidden="true">+</span>
+              </span>
+            </button>
+            <div class="case-expanded" id="case-gallery-02" hidden>
+              <div class="post-photo-grid">
+                <figure><img src="assets/cases/case-02-01.jpg" alt="X9 Cup Shooting Competition photo 01" /></figure>
+                <figure><img src="assets/cases/case-02-02.jpg" alt="X9 Cup Shooting Competition photo 02" /></figure>
+                <figure><img src="assets/cases/case-02-03.jpg" alt="X9 Cup Shooting Competition photo 03" /></figure>
+                <figure><img src="assets/cases/case-02-04.jpg" alt="X9 Cup Shooting Competition photo 04" /></figure>
+                <figure><img src="assets/cases/case-02-05.jpg" alt="X9 Cup Shooting Competition photo 05" /></figure>
+                <figure><img src="assets/cases/case-02-06.jpg" alt="X9 Cup Shooting Competition photo 06" /></figure>
+              </div>
+              <a class="case-link" href="https://www.instagram.com/jyl.broadcast/p/DXas-JMAK3S/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
             </div>
           </article>
-          <article class="post-gallery">
-            <header class="post-gallery-head">
-              <span>POST 04</span>
-              <a href="https://www.instagram.com/jyl.broadcast/p/DT4lMk7DkZz/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
-            </header>
-            <div class="post-photo-grid">
-              <figure><img src="assets/cases/case-04-01.jpg" alt="JYL Broadcast Instagram post 04 photo 01" /></figure>
+          <article class="post-gallery" data-case-card>
+            <button class="case-teaser" type="button" aria-expanded="false" aria-controls="case-gallery-03" data-case-toggle>
+              <figure class="case-cover">
+                <img src="assets/cases/case-03-01.jpg" alt="Lam Fung Vancouver concert IMAG support" />
+              </figure>
+              <span class="case-copy">
+                <span class="case-index">04 / 5 PHOTOS</span>
+                <span class="case-title" data-i18n="caseLamTitle">Lam Fung Live Around The World Vancouver</span>
+                <span class="case-text" data-i18n="caseLamText">Multicam IMAG support with a Sony FX6-based camera system, director workflow and on-site switching.</span>
+                <span class="case-meta" data-i18n="caseLamMeta">Sony FX6 / IMAG / Live Switching</span>
+                <span class="case-specs">
+                  <span><em data-i18n="caseTypeLabel">Type</em><strong data-i18n="caseLamType">Concert / IMAG</strong></span>
+                  <span><em data-i18n="caseLocationLabel">Location</em><strong data-i18n="caseLamLocation">Vancouver</strong></span>
+                  <span><em data-i18n="caseSystemLabel">System</em><strong data-i18n="caseLamSystem">Sony FX6 Multicam</strong></span>
+                </span>
+              </span>
+              <span class="case-action">
+                <span data-case-toggle-label data-i18n="caseViewPhotos">View photos</span>
+                <span class="case-plus" aria-hidden="true">+</span>
+              </span>
+            </button>
+            <div class="case-expanded" id="case-gallery-03" hidden>
+              <div class="post-photo-grid">
+                <figure><img src="assets/cases/case-03-01.jpg" alt="Lam Fung Vancouver concert photo 01" /></figure>
+                <figure><img src="assets/cases/case-03-02.jpg" alt="Lam Fung Vancouver concert photo 02" /></figure>
+                <figure><img src="assets/cases/case-03-03.jpg" alt="Lam Fung Vancouver concert photo 03" /></figure>
+                <figure><img src="assets/cases/case-03-04.jpg" alt="Lam Fung Vancouver concert photo 04" /></figure>
+                <figure><img src="assets/cases/case-03-05.jpg" alt="Lam Fung Vancouver concert photo 05" /></figure>
+              </div>
+              <a class="case-link" href="https://www.instagram.com/jyl.broadcast/p/DXXhfUVEiCZ/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
             </div>
           </article>
-          <article class="post-gallery">
-            <header class="post-gallery-head">
-              <span>POST 05</span>
-              <a href="https://www.instagram.com/jyl.broadcast/p/DTHoePQDjdo/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
-            </header>
-            <div class="post-photo-grid">
-              <figure><img src="assets/cases/case-05-01.jpg" alt="JYL Broadcast Instagram post 05 photo 01" /></figure>
-              <figure><img src="assets/cases/case-05-02.jpg" alt="JYL Broadcast Instagram post 05 photo 02" /></figure>
-              <figure><img src="assets/cases/case-05-03.jpg" alt="JYL Broadcast Instagram post 05 photo 03" /></figure>
-              <figure><img src="assets/cases/case-05-04.jpg" alt="JYL Broadcast Instagram post 05 photo 04" /></figure>
-              <figure><img src="assets/cases/case-05-05.jpg" alt="JYL Broadcast Instagram post 05 photo 05" /></figure>
+          <article class="post-gallery" data-case-card>
+            <button class="case-teaser" type="button" aria-expanded="false" aria-controls="case-gallery-04" data-case-toggle>
+              <figure class="case-cover">
+                <img src="assets/cases/case-04-01.jpg" alt="The Legend of the Nine-Colored Deer stage production" />
+              </figure>
+              <span class="case-copy">
+                <span class="case-index">05 / 1 PHOTO</span>
+                <span class="case-title" data-i18n="caseDeerTitle">The Legend of the Nine-Colored Deer</span>
+                <span class="case-text" data-i18n="caseDeerText">On-site multicam recording, camera crew and live switching support at Queen Elizabeth Theatre.</span>
+                <span class="case-meta" data-i18n="caseDeerMeta">Multicam Record / Camera Crew / Switching</span>
+                <span class="case-specs">
+                  <span><em data-i18n="caseTypeLabel">Type</em><strong data-i18n="caseDeerType">Stage Performance</strong></span>
+                  <span><em data-i18n="caseLocationLabel">Location</em><strong data-i18n="caseDeerLocation">Queen Elizabeth Theatre</strong></span>
+                  <span><em data-i18n="caseSystemLabel">System</em><strong data-i18n="caseDeerSystem">Multicam Recording</strong></span>
+                </span>
+              </span>
+              <span class="case-action">
+                <span data-case-toggle-label data-i18n="caseViewPhotos">View photos</span>
+                <span class="case-plus" aria-hidden="true">+</span>
+              </span>
+            </button>
+            <div class="case-expanded" id="case-gallery-04" hidden>
+              <div class="post-photo-grid">
+                <figure><img src="assets/cases/case-04-01.jpg" alt="The Legend of the Nine-Colored Deer photo 01" /></figure>
+              </div>
+              <a class="case-link" href="https://www.instagram.com/jyl.broadcast/p/DT4lMk7DkZz/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
+            </div>
+          </article>
+          <article class="post-gallery" data-case-card>
+            <button class="case-teaser" type="button" aria-expanded="false" aria-controls="case-gallery-05" data-case-toggle>
+              <figure class="case-cover">
+                <img src="assets/cases/case-05-01.jpg" alt="Richie Jen QI JI World Tour Vancouver live production" />
+              </figure>
+              <span class="case-copy">
+                <span class="case-index">06 / 8 PHOTOS</span>
+                <span class="case-title" data-i18n="caseRichieTitle">Richie Jen QI JI World Tour Vancouver</span>
+                <span class="case-text" data-i18n="caseRichieText">Multicam setup, IMAG system, live switching and on-site crew support for a concert production with no second take.</span>
+                <span class="case-meta" data-i18n="caseRichieMeta">Multicam / IMAG / On-site Crew</span>
+                <span class="case-specs">
+                  <span><em data-i18n="caseTypeLabel">Type</em><strong data-i18n="caseRichieType">Concert / IMAG</strong></span>
+                  <span><em data-i18n="caseLocationLabel">Location</em><strong data-i18n="caseRichieLocation">Vancouver</strong></span>
+                  <span><em data-i18n="caseSystemLabel">System</em><strong data-i18n="caseRichieSystem">IMAG Broadcast System</strong></span>
+                </span>
+              </span>
+              <span class="case-action">
+                <span data-case-toggle-label data-i18n="caseViewPhotos">View photos</span>
+                <span class="case-plus" aria-hidden="true">+</span>
+              </span>
+            </button>
+            <div class="case-expanded" id="case-gallery-05" hidden>
+              <div class="post-photo-grid">
+                <figure><img src="assets/cases/case-05-01.jpg" alt="Richie Jen QI JI World Tour Vancouver photo 01" /></figure>
+                <figure><img src="assets/cases/case-05-02.jpg" alt="Richie Jen QI JI World Tour Vancouver photo 02" /></figure>
+                <figure><img src="assets/cases/case-05-03.jpg" alt="Richie Jen QI JI World Tour Vancouver photo 03" /></figure>
+                <figure><img src="assets/cases/case-05-04.jpg" alt="Richie Jen QI JI World Tour Vancouver photo 04" /></figure>
+                <figure><img src="assets/cases/case-05-05.jpg" alt="Richie Jen QI JI World Tour Vancouver photo 05" /></figure>
+                <figure><img src="assets/cases/case-05-06.jpg" alt="Richie Jen QI JI World Tour Vancouver photo 06" /></figure>
+                <figure><img src="assets/cases/case-05-07.jpg" alt="Richie Jen QI JI World Tour Vancouver photo 07" /></figure>
+                <figure><img src="assets/cases/case-05-08.jpg" alt="Richie Jen QI JI World Tour Vancouver photo 08" /></figure>
+              </div>
+              <a class="case-link" href="https://www.instagram.com/jyl.broadcast/p/DTHoePQDjdo/" target="_blank" rel="noreferrer" data-i18n="caseOpen">View on Instagram</a>
             </div>
           </article>
         </div>
@@ -174,12 +336,76 @@
       <section class="band contact-section" id="contact" aria-labelledby="contact-title">
         <div class="contact-copy">
           <p class="kicker" data-i18n="contactKicker">CONTACT</p>
-          <h2 id="contact-title" data-i18n="contactTitle">Contact us.</h2>
+          <h2 id="contact-title" data-i18n="contactTitle">Contact us</h2>
           <p data-i18n="contactText">
             Tell us your event type, date, city, venue, duration and delivery platform. We will reply with camera, crew,
             equipment and budget suggestions.
           </p>
-          <a class="contact-link" href="mailto:hello@jylbroadcast.com">hello@jylbroadcast.com</a>
+          <div class="contact-methods" aria-label="Direct contact methods">
+            <a class="contact-method contact-method-primary" href="mailto:info@jylbroadcast.com">
+              <span class="contact-method-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 6h16v12H4z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </span>
+              <span>
+                <em data-i18n="contactEmailLabel">Email</em>
+                <strong>info@jylbroadcast.com</strong>
+              </span>
+            </a>
+            <a class="contact-method contact-method-secondary" href="tel:+17782222926">
+              <span class="contact-method-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9z" />
+                </svg>
+              </span>
+              <span>
+                <em data-i18n="contactPhoneLabel">Phone</em>
+                <strong>+1 778 222 2926</strong>
+              </span>
+            </a>
+            <a class="contact-method contact-method-secondary" href="https://wa.me/17782222926" target="_blank" rel="noreferrer">
+              <span class="contact-method-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4.1z" />
+                  <path d="M9.2 8.7c.2 3 2 4.8 5.1 6" />
+                  <path d="m9.2 8.7.9-.9 1.4 1.6-.8 1.1" />
+                  <path d="m14.3 14.7 1.1-.8 1.5 1.3-.8 1" />
+                </svg>
+              </span>
+              <span>
+                <em data-i18n="contactWhatsappLabel">WhatsApp</em>
+                <strong data-i18n="contactWhatsappAction">Message us</strong>
+              </span>
+            </a>
+            <a class="contact-method contact-method-secondary" href="https://www.instagram.com/jyl.broadcast/" target="_blank" rel="noreferrer">
+              <span class="contact-method-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <rect x="4" y="4" width="16" height="16" rx="5" />
+                  <circle cx="12" cy="12" r="3.5" />
+                  <path d="M17.5 6.8h.01" />
+                </svg>
+              </span>
+              <span>
+                <em data-i18n="contactInstagramLabel">Instagram</em>
+                <strong>@jyl.broadcast</strong>
+              </span>
+            </a>
+            <a class="contact-method contact-method-secondary" href="https://xhslink.com/m/1he9LDdqied" target="_blank" rel="noreferrer">
+              <span class="contact-method-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M6 4h12a2 2 0 0 1 2 2v14l-4-2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+                  <path d="M8 9h8" />
+                  <path d="M8 13h5" />
+                </svg>
+              </span>
+              <span>
+                <em data-i18n="contactXhsLabel">Xiaohongshu</em>
+                <strong data-i18n="contactXhsAction">View profile</strong>
+              </span>
+            </a>
+          </div>
         </div>
         <form class="contact-form" name="contact" method="post" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
@@ -204,12 +430,12 @@
           <label>
             <span data-i18n="formEvent">Event Type</span>
             <select name="event_type" required>
-              <option value="Concert" data-i18n="optionConcert">Concert</option>
-              <option value="Conference" data-i18n="optionConference">Conference</option>
-              <option value="Music Festival" data-i18n="optionFestival">Music Festival</option>
-              <option value="Dance Competition" data-i18n="optionDance">Dance Competition</option>
-              <option value="Launch Event" data-i18n="optionLaunch">Launch Event</option>
-              <option value="Field Production" data-i18n="optionField">Field Production</option>
+              <option value="Concert or Live Show" data-i18n="optionConcert">Concert / Live Show</option>
+              <option value="Corporate Gala or Banquet" data-i18n="optionConference">Corporate Gala / Banquet</option>
+              <option value="Launch or Conference" data-i18n="optionFestival">Launch / Conference</option>
+              <option value="Music Festival" data-i18n="optionDance">Music Festival</option>
+              <option value="Competition or Tournament" data-i18n="optionLaunch">Competition / Tournament</option>
+              <option value="Evening Event or Stage Show" data-i18n="optionField">Evening Event / Stage Show</option>
             </select>
           </label>
           <label>
@@ -230,6 +456,6 @@
       </section>
     </main>
 
-    <script src="script.js?v=16"></script>
+    <script src="script.js?v=25"></script>
   </body>
 </html>
