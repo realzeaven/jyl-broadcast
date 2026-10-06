@@ -3,8 +3,120 @@ const ctx = canvas.getContext("2d", { alpha: true });
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const stillMode = new URLSearchParams(window.location.search).has("still");
 const DEFAULT_LANGUAGE = "en";
-const LANGUAGE_STORAGE_KEY = "jyl-language-v4";
+const LANGUAGE_STORAGE_KEY = "jyl-language-v5";
 const CASE_IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
+const XIAOHONGSHU_PROFILE_URL = "https://xhslink.com/m/1he9LDdqied";
+
+const caseStudies = [
+  {
+    id: "phantom-creek-anniversary",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/1bc2eb59a31b1deadf96631f249adb0b/1040g2sg325rfh44hked05qarcolcjt7cn298g00!nc_n_webp_mw_1",
+    titleKey: "casePhantomTitle",
+    textKey: "casePhantomText",
+    metaKey: "casePhantomMeta",
+    typeKey: "casePhantomType",
+    locationKey: "casePhantomLocation",
+    systemKey: "casePhantomSystem",
+    alt: "Phantom Creek Winery anniversary gala live production",
+  },
+  {
+    id: "above-the-dust-forum",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/f96073d2281aab4fc14ff7428e167da5/notes_pre_post/1040g3k032573pn5ike005qarcolcjt7cqekajio!nc_n_webp_mw_1",
+    titleKey: "caseDustTitle",
+    textKey: "caseDustText",
+    metaKey: "caseDustMeta",
+    typeKey: "caseDustType",
+    locationKey: "caseDustLocation",
+    systemKey: "caseDustSystem",
+    alt: "Above the Dust Vancouver director talk live production",
+  },
+  {
+    id: "deyunshe-30th-vancouver",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/0a7b0e07b5c28f4716f997224d582e9a/notes_pre_post/1040g3k8320f674pf68005qarcolcjt7cmll88kg!nc_n_webp_mw_1",
+    titleKey: "caseDeyunsheTitle",
+    textKey: "caseDeyunsheText",
+    metaKey: "caseDeyunsheMeta",
+    typeKey: "caseDeyunsheType",
+    locationKey: "caseDeyunsheLocation",
+    systemKey: "caseDeyunsheSystem",
+    alt: "Deyunshe 30th Anniversary World Tour Vancouver live production",
+  },
+  {
+    id: "jeff-chang-future-style",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/ae048249171ac710286616f286454fef/1040g00831vjtq0et2i5g5qarcolcjt7ckurm530!nc_n_webp_mw_1",
+    titleKey: "caseJeffTitle",
+    textKey: "caseJeffText",
+    metaKey: "caseJeffMeta",
+    typeKey: "caseJeffType",
+    locationKey: "caseJeffLocation",
+    systemKey: "caseJeffSystem",
+    alt: "Jeff Chang Future Style World Tour live production",
+  },
+  {
+    id: "x9-cup-live",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/f247193d74de1ec371b08a9b4b550890/notes_pre_post/1040g3k831v8e29302q005qarcolcjt7c98309mo!nc_n_webp_mw_1",
+    titleKey: "caseX9Title",
+    textKey: "caseX9Text",
+    metaKey: "caseX9Meta",
+    typeKey: "caseX9Type",
+    locationKey: "caseX9Location",
+    systemKey: "caseX9System",
+    alt: "X9 Cup shooting competition live broadcast",
+  },
+  {
+    id: "efp-broadcast-system",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/62abad81f639a0b78ee4fa9700c616ab/1040g2sg31v6tq1q83qd05qarcolcjt7c6d87bp8!nc_n_webp_mw_1",
+    titleKey: "caseEfpTitle",
+    textKey: "caseEfpText",
+    metaKey: "caseEfpMeta",
+    typeKey: "caseEfpType",
+    locationKey: "caseEfpLocation",
+    systemKey: "caseEfpSystem",
+    alt: "Vancouver EFP live broadcast system",
+  },
+  {
+    id: "lam-fung-live-vancouver",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/6d569cbfcdb14930c1fe2112880b95c1/1040g2sg31v6ri9cnjq9g5qarcolcjt7cqvc1b30!nc_n_webp_mw_1",
+    titleKey: "caseLamTitle",
+    textKey: "caseLamText",
+    metaKey: "caseLamMeta",
+    typeKey: "caseLamType",
+    locationKey: "caseLamLocation",
+    systemKey: "caseLamSystem",
+    alt: "Lam Fung Live Around The World Vancouver IMAG support",
+  },
+  {
+    id: "nine-colored-deer",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/0e9dfe596758d462d2f83a79122b927a/notes_pre_post/1040g3k031rnckbql32005qarcolcjt7colt8qio!nc_n_webp_mw_1",
+    titleKey: "caseDeerTitle",
+    textKey: "caseDeerText",
+    metaKey: "caseDeerMeta",
+    typeKey: "caseDeerType",
+    locationKey: "caseDeerLocation",
+    systemKey: "caseDeerSystem",
+    alt: "The Legend of the Nine-Colored Deer Vancouver stage production",
+  },
+  {
+    id: "richie-jen-qiji",
+    image:
+      "https://sns-webpic-qc.xhscdn.com/202610060837/77a891133e3ef37df95ca5cc1fc4400b/1040g2sg31v6ri9cnjqdg5qarcolcjt7cb845668!nc_n_webp_mw_1",
+    titleKey: "caseRichieTitle",
+    textKey: "caseRichieText",
+    metaKey: "caseRichieMeta",
+    typeKey: "caseRichieType",
+    locationKey: "caseRichieLocation",
+    systemKey: "caseRichieSystem",
+    alt: "Richie Jen QI JI World Tour Vancouver live production",
+  },
+];
 
 const translations = {
   zh: {
@@ -60,6 +172,18 @@ const translations = {
     casesTitle: "案例介绍",
     casesText:
       "不同活动对机位、镜头、音频和信号稳定性的要求完全不同。我们会根据现场规模和交付平台，为每个项目配置清晰的制作方案。",
+    casePhantomTitle: "幻影溪酒庄十周年传承盛典",
+    casePhantomText: "高规格酒庄周年活动需要稳定、克制并有质感的现场画面。我们围绕主舞台、嘉宾、流程节点和现场氛围完成活动记录。",
+    casePhantomMeta: "服务：多机位活动拍摄 / 现场导播 / 嘉宾特写 / 活动记录",
+    casePhantomType: "公司活动 / Gala",
+    casePhantomLocation: "BC",
+    casePhantomSystem: "多机位现场制作",
+    caseDustTitle: "王小帅导演《沃土》温哥华分享会",
+    caseDustText: "分享会和映后交流更需要清晰的人物、声音和节奏。我们为现场对谈、嘉宾发言和活动记录提供稳定制作支持。",
+    caseDustMeta: "服务：论坛拍摄 / 嘉宾特写 / 现场录制 / 技术支持",
+    caseDustType: "电影分享会",
+    caseDustLocation: "温哥华",
+    caseDustSystem: "轻量多机位系统",
     caseForumTitle: "大型会议",
     caseForumText: "主会场多机位、嘉宾特写、PPT/视频信号接入、平台直播与全程录制。",
     caseForumMeta: "EFP x 4 / 导播切换 / 直播推流 / ISO录制",
@@ -75,11 +199,12 @@ const translations = {
     caseTypeLabel: "类型",
     caseLocationLabel: "地点",
     caseSystemLabel: "系统",
+    caseCoverLabel: "小红书封面",
     caseDeyunsheType: "巡演现场",
     caseDeyunsheLocation: "温哥华",
     caseDeyunsheSystem: "Sony FX6 Flypack",
-    caseJeffTitle: "张信哲世界巡回演唱会 温哥华",
-    caseJeffText: "熟悉的旋律在现场重新发生。我们为 Jeff Chang “Our Story” World Tour 温哥华站提供实时画面制作与现场技术支持。",
+    caseJeffTitle: "张信哲「未来式」世界巡回",
+    caseJeffText: "熟悉的旋律在现场重新发生。我们为张信哲「未来式」世界巡回温哥华站提供实时画面制作与现场技术支持。",
     caseJeffMeta: "服务：现场导播切换 / 设备租赁 / 技术支持",
     caseJeffType: "巡演现场",
     caseJeffLocation: "温哥华",
@@ -90,6 +215,12 @@ const translations = {
     caseX9Type: "比赛直播",
     caseX9Location: "温哥华",
     caseX9System: "多机位直播系统",
+    caseEfpTitle: "温哥华迅道机现场转播系统",
+    caseEfpText: "这是一套面向真实现场的 EFP 制作系统，用于多机位切换、节目监看、录制和直播输出，适合更大规模的活动制作。",
+    caseEfpMeta: "服务：EFP 系统 / 设备租赁 / 多机位切换 / 技术支持",
+    caseEfpType: "系统搭建",
+    caseEfpLocation: "温哥华",
+    caseEfpSystem: "Panasonic EFP Flypack",
     caseLamTitle: "林峯世界巡回演唱会 温哥华",
     caseLamText: "为 LF LIVE AROUND THE WORLD 温哥华站提供多机位 IMAG 支持，让舞台细节和现场节奏稳定呈现在大屏与节目输出中。",
     caseLamMeta: "服务：导演与摄像团队 / Sony FX6 多机位系统 / IMAG / 现场切换",
@@ -111,9 +242,9 @@ const translations = {
     caseMoreTitle: "更多案例即将更新",
     caseMoreText: "第 6 个案例位已预留，可直接接入新的 Instagram 图集、活动信息和项目链接。",
     caseMoreMeta: "等待下一个项目",
-    caseOpen: "查看 Instagram",
-    caseViewPhotos: "展开照片",
-    caseHidePhotos: "收起照片",
+    caseOpen: "查看小红书",
+    caseViewPhotos: "查看图片",
+    caseHidePhotos: "收起图片",
     caseFestivalTitle: "音乐节转播",
     caseFestivalText: "长时间舞台拍摄、现场音频接入、节目切换、备份录制和多平台同步交付。",
     caseFestivalMeta: "户外舞台 / 现场音频 / 多平台",
@@ -209,6 +340,18 @@ const translations = {
     casesTitle: "Case studies",
     casesText:
       "Every event has different requirements for camera positions, lensing, audio and signal reliability. We build a clear production plan for each venue, scale and delivery platform.",
+    casePhantomTitle: "Phantom Creek Winery 10th Anniversary Gala",
+    casePhantomText: "A premium anniversary event needs calm, polished and reliable coverage. We focused on stage moments, guest close-ups, program flow and atmosphere capture.",
+    casePhantomMeta: "Services: Multicam Event Coverage / Live Switching / Guest Close-ups / Event Record",
+    casePhantomType: "Corporate Gala",
+    casePhantomLocation: "BC",
+    casePhantomSystem: "Multicam Production",
+    caseDustTitle: "Above the Dust Vancouver Director Talk",
+    caseDustText: "For a film sharing session, the image needs to serve people, voice and conversation rhythm. We supported the talk, speaker close-ups and event recording workflow.",
+    caseDustMeta: "Services: Forum Coverage / Speaker Close-ups / Recording / Technical Support",
+    caseDustType: "Film Talk",
+    caseDustLocation: "Vancouver",
+    caseDustSystem: "Compact Multicam",
     caseForumTitle: "Forum Live",
     caseForumText: "Multi-camera main hall coverage, speaker close-ups, slide/video source integration, streaming and full recording.",
     caseForumMeta: "EFP x 4 / Switcher / Streaming / ISO Record",
@@ -224,11 +367,12 @@ const translations = {
     caseTypeLabel: "Type",
     caseLocationLabel: "Location",
     caseSystemLabel: "System",
+    caseCoverLabel: "Xiaohongshu cover",
     caseDeyunsheType: "Concert Tour",
     caseDeyunsheLocation: "Vancouver",
     caseDeyunsheSystem: "Sony FX6 Flypack",
-    caseJeffTitle: "Jeff Chang World Tour Vancouver",
-    caseJeffText: "Familiar melodies came alive in real time. We supported Jeff Chang “Our Story” World Tour Vancouver with live image delivery and on-site technical support.",
+    caseJeffTitle: "Jeff Chang Future Style World Tour",
+    caseJeffText: "Familiar melodies came alive in real time. We supported Jeff Chang Future Style World Tour Vancouver with live image delivery and on-site technical support.",
     caseJeffMeta: "Services: Live Switching / Equipment Rental / Technical Support",
     caseJeffType: "Concert Tour",
     caseJeffLocation: "Vancouver",
@@ -239,6 +383,12 @@ const translations = {
     caseX9Type: "Competition Live",
     caseX9Location: "Vancouver",
     caseX9System: "Multicam Streaming",
+    caseEfpTitle: "Vancouver EFP Live Broadcast System",
+    caseEfpText: "A venue-ready EFP production system for multicamera switching, monitoring, recording and live delivery across larger event environments.",
+    caseEfpMeta: "Services: EFP System / Equipment Rental / Multicam Switching / Technical Support",
+    caseEfpType: "System Build",
+    caseEfpLocation: "Vancouver",
+    caseEfpSystem: "Panasonic EFP Flypack",
     caseLamTitle: "Lam Fung Live Around The World Vancouver",
     caseLamText: "We provided multicam IMAG support for LF LIVE AROUND THE WORLD Vancouver, keeping stage detail and live rhythm clear across screen and program output.",
     caseLamMeta: "Services: Director & Camera Crew / Sony FX6 Multicam System / IMAG / Live Switching",
@@ -260,9 +410,9 @@ const translations = {
     caseMoreTitle: "Additional Case Ready",
     caseMoreText: "This sixth case slot is ready for your next Instagram project, image set and production details.",
     caseMoreMeta: "Ready for next project",
-    caseOpen: "View on Instagram",
-    caseViewPhotos: "View photos",
-    caseHidePhotos: "Hide photos",
+    caseOpen: "View on Xiaohongshu",
+    caseViewPhotos: "View image",
+    caseHidePhotos: "Hide image",
     caseFestivalTitle: "Festival Coverage",
     caseFestivalText: "Long-duration stage coverage with live audio feed, program switching, backup recording and multi-platform delivery.",
     caseFestivalMeta: "Outdoor Stage / Live Audio / Multi-platform",
@@ -690,6 +840,47 @@ function setPointer(event) {
   pointer.ty = (event.clientY / height - 0.5) * 2;
 }
 
+function renderCaseStudies() {
+  const list = document.querySelector("[data-case-list]");
+  if (!list) return;
+
+  list.innerHTML = caseStudies
+    .map((item, index) => {
+      const number = String(index + 1).padStart(2, "0");
+      const panelId = `case-gallery-${item.id}`;
+      return `
+          <article class="post-gallery" data-case-card>
+            <button class="case-teaser" type="button" aria-expanded="false" aria-controls="${panelId}" data-case-toggle>
+              <figure class="case-cover">
+                <img src="${item.image}" alt="${item.alt}" loading="${index === 0 ? "eager" : "lazy"}" referrerpolicy="no-referrer" />
+              </figure>
+              <span class="case-copy">
+                <span class="case-index">${number} / <span data-i18n="caseCoverLabel"></span></span>
+                <span class="case-title" data-i18n="${item.titleKey}"></span>
+                <span class="case-text" data-i18n="${item.textKey}"></span>
+                <span class="case-meta" data-i18n="${item.metaKey}"></span>
+                <span class="case-specs">
+                  <span><em data-i18n="caseTypeLabel"></em><strong data-i18n="${item.typeKey}"></strong></span>
+                  <span><em data-i18n="caseLocationLabel"></em><strong data-i18n="${item.locationKey}"></strong></span>
+                  <span><em data-i18n="caseSystemLabel"></em><strong data-i18n="${item.systemKey}"></strong></span>
+                </span>
+              </span>
+              <span class="case-action">
+                <span data-case-toggle-label data-i18n="caseViewPhotos"></span>
+                <span class="case-plus" aria-hidden="true">+</span>
+              </span>
+            </button>
+            <div class="case-expanded" id="${panelId}" hidden>
+              <div class="post-photo-grid single-image">
+                <figure><img src="${item.image}" alt="${item.alt} expanded image" loading="lazy" referrerpolicy="no-referrer" /></figure>
+              </div>
+              <a class="case-link" href="${XIAOHONGSHU_PROFILE_URL}" target="_blank" rel="noreferrer" data-i18n="caseOpen"></a>
+            </div>
+          </article>`;
+    })
+    .join("");
+}
+
 function hydrateCaseImages() {
   document.querySelectorAll("[data-case-image]").forEach((node) => {
     const basePath = node.dataset.caseImage;
@@ -792,6 +983,7 @@ if (languageToggle) {
   });
 }
 
+renderCaseStudies();
 setupCaseAccordions();
 setLanguage(readLanguagePreference() || DEFAULT_LANGUAGE);
 hydrateCaseImages();

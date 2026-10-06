@@ -1238,6 +1238,10 @@ h2 {
   gap: 0.7rem;
 }
 
+.post-photo-grid.single-image {
+  grid-template-columns: minmax(12rem, 18rem);
+}
+
 .post-photo-grid figure {
   margin: 0;
   overflow: hidden;
@@ -1253,6 +1257,11 @@ h2 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.post-photo-grid.single-image img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
 .case-visual.concert {
