@@ -60,6 +60,30 @@ const translations = {
     casesTitle: "案例介绍",
     casesText:
       "不同活动对机位、镜头、音频和信号稳定性的要求完全不同。我们会根据现场规模和交付平台，为每个项目配置清晰的制作方案。",
+    caseZenTitle: "Zen Realm 舞台演出与 Suxin 慈善晚会",
+    caseZenText: "在 River Rock Theatre，以三机位拍摄和实时导播切换呈现舞台全景与表演细节，让画面节奏贴合这场融合文化、艺术与公益的晚会。",
+    caseZenMeta: "服务：三机位拍摄 / 现场导播切换 / 摄像与导播团队",
+    caseZenType: "舞台演出 / 慈善晚会",
+    caseZenLocation: "River Rock Theatre, Richmond",
+    caseZenSystem: "三机位现场制作",
+    casePhantomTitle: "幻影溪酒庄十周年传承盛典",
+    casePhantomText: "在 Fairmont Pacific Rim，以多机位实时切换和 IMAG 大屏呈现致辞、演出与慈善拍卖环节，让现场宾客清晰看到每一个重要时刻。",
+    casePhantomMeta: "服务：多机位现场切换 / IMAG 大屏输出",
+    casePhantomType: "周年盛典 / 慈善晚宴",
+    casePhantomLocation: "Fairmont Pacific Rim, Vancouver",
+    casePhantomSystem: "多机位 IMAG 系统",
+    casePujaTitle: "宗萨蒋扬钦哲仁波切 · 尊胜法会",
+    casePujaText: "为温哥华首届、为期五日的尊胜法会提供多机位拍摄、现场导播与直播支持。通过镜头调度、切换节奏和视觉效果，兼顾现场庄严氛围与线上观看体验。",
+    casePujaMeta: "服务：多机位拍摄 / 现场导播 / 直播推流 / 技术支持",
+    casePujaType: "宗教活动 / 五日直播",
+    casePujaLocation: "Sheraton Vancouver Airport Hotel",
+    casePujaSystem: "多机位直播系统",
+    caseDustTitle: "王小帅《沃土》温哥华放映及分享会",
+    caseDustText: "从设备搭建、信号测试到机位协调与现场切换，为《沃土》温哥华放映及导演王小帅分享会提供多机位制作支持，记录影片介绍与观众交流。",
+    caseDustMeta: "服务：多机位制作 / 现场导播切换 / 技术支持",
+    caseDustType: "电影放映 / 导演分享会",
+    caseDustLocation: "温哥华",
+    caseDustSystem: "多机位现场制作",
     caseForumTitle: "大型会议",
     caseForumText: "主会场多机位、嘉宾特写、PPT/视频信号接入、平台直播与全程录制。",
     caseForumMeta: "EFP x 4 / 导播切换 / 直播推流 / ISO录制",
@@ -209,6 +233,30 @@ const translations = {
     casesTitle: "Case studies",
     casesText:
       "Every event has different requirements for camera positions, lensing, audio and signal reliability. We build a clear production plan for each venue, scale and delivery platform.",
+    caseZenTitle: "Zen Realm & Suxin Charity Gala",
+    caseZenText: "Three-camera coverage and live video switching at River Rock Theatre, following the show from wide stage views to performance details for an evening of culture, art and charity.",
+    caseZenMeta: "Services: Three-camera Coverage / Live Switching / Camera & Director Crew",
+    caseZenType: "Stage Production / Charity Gala",
+    caseZenLocation: "River Rock Theatre, Richmond",
+    caseZenSystem: "Three-camera Production",
+    casePhantomTitle: "Phantom Creek Estates 10th Anniversary Legacy Gala",
+    casePhantomText: "Live multicamera switching and IMAG at Fairmont Pacific Rim brought speeches, performances and charity auction moments to the venue screens, keeping guests connected to the program.",
+    casePhantomMeta: "Services: Multicam Live Switching / IMAG",
+    casePhantomType: "Anniversary / Charity Gala",
+    casePhantomLocation: "Fairmont Pacific Rim, Vancouver",
+    casePhantomSystem: "Multicam IMAG System",
+    casePujaTitle: "Dzongsar Khyentse Rinpoche · Ushnisha Vijaya Puja",
+    casePujaText: "Five days of multicamera coverage, live directing and livestreaming for Vancouver's inaugural Ushnisha Vijaya Puja, balancing the solemn atmosphere with thoughtful shot selection, pacing and visual effects.",
+    casePujaMeta: "Services: Multicam Coverage / Live Directing / Livestreaming / Technical Support",
+    casePujaType: "Religious Event / Five-day Livestream",
+    casePujaLocation: "Sheraton Vancouver Airport Hotel",
+    casePujaSystem: "Multicam Streaming System",
+    caseDustTitle: "Above the Dust · Vancouver Screening & Director Talk",
+    caseDustText: "Multicamera production for the Vancouver screening and discussion with director Wang Xiaoshuai, from equipment setup and signal testing to camera coordination and live switching.",
+    caseDustMeta: "Services: Multicam Production / Live Directing & Switching / Technical Support",
+    caseDustType: "Film Screening / Director Talk",
+    caseDustLocation: "Vancouver",
+    caseDustSystem: "Multicam Production",
     caseForumTitle: "Forum Live",
     caseForumText: "Multi-camera main hall coverage, speaker close-ups, slide/video source integration, streaming and full recording.",
     caseForumMeta: "EFP x 4 / Switcher / Streaming / ISO Record",
@@ -771,6 +819,12 @@ function setLanguage(language) {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const text = dictionary[node.dataset.i18n];
     if (text) node.textContent = text;
+  });
+
+  document.querySelectorAll("[data-photo-count]").forEach((node) => {
+    const count = Number(node.dataset.photoCount);
+    const label = activeLanguage === "zh" ? `${count} 张照片` : `${count} ${count === 1 ? "PHOTO" : "PHOTOS"}`;
+    node.textContent = `${node.dataset.caseNumber} / ${label}`;
   });
 
   const toggle = document.querySelector("[data-lang-toggle]");
